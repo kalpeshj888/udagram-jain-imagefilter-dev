@@ -46,11 +46,13 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     let filteredpath = filterImageFromURL(image_url);  
     res.sendFile(await filteredpath);
 
+    //deleteLocalFiles
+
     let files: Array<string>;
     files.push(await filteredpath);
     deleteLocalFiles(files);
+
   } );
-  
   // Start the Server
   app.listen( port, () => {
       console.log( `server running http://localhost:${ port }` );
