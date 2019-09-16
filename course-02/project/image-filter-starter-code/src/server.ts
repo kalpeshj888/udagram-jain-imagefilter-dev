@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
+import fs from 'fs';
 
 (async () => {
 
@@ -45,6 +46,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     }
     let filteredpath = filterImageFromURL(image_url);  
     res.sendFile(await filteredpath);
+    fs.unlinkSync(await filteredpath);
 
     //deleteLocalFiles
 
