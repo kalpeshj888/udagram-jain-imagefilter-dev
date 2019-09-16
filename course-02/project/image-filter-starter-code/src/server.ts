@@ -51,9 +51,9 @@ import fs from 'fs';
 
     //deleteLocalFiles
 
-    let files: Array<string>;
-    files.push(await filteredpath);
-    deleteLocalFiles(files);
+    //let files: Array<string>;
+    //files.push(await filteredpath);
+    //deleteLocalFiles(files);
 
   } );
   // Start the Server
