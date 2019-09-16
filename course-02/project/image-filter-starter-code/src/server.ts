@@ -47,13 +47,12 @@ import fs from 'fs';
     }
     let filteredpath = filterImageFromURL(image_url);  
     res.sendFile(await filteredpath);
-    fs.unlinkSync(await filteredpath);
 
     //deleteLocalFiles
 
-    //let files: Array<string>;
-    //files.push(await filteredpath);
-    //deleteLocalFiles(files);
+    let files: Array<string>;
+    files.push(await filteredpath);
+    deleteLocalFiles(files);
 
   } );
   // Start the Server
